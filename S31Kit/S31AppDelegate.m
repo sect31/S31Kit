@@ -7,6 +7,7 @@
 //
 
 #import "S31AppDelegate.h"
+#import "S31.h"
 
 @implementation S31AppDelegate
 
@@ -16,6 +17,7 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

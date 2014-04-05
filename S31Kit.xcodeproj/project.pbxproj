@@ -19,6 +19,9 @@
 		3FBF010818F05B0F002E33A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FBF00F018F05B0F002E33A1 /* UIKit.framework */; };
 		3FBF011018F05B0F002E33A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF010E18F05B0F002E33A1 /* InfoPlist.strings */; };
 		3FBF011218F05B0F002E33A1 /* S31KitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF011118F05B0F002E33A1 /* S31KitTests.m */; };
+		3FBF011E18F05B44002E33A1 /* S31NetworkAvailability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF011D18F05B44002E33A1 /* S31NetworkAvailability.m */; };
+		3FBF012118F05BC2002E33A1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF012018F05BC2002E33A1 /* .gitignore */; };
+		3FBF012E18F05FA9002E33A1 /* UIView+Parallax.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF012D18F05FA9002E33A1 /* UIView+Parallax.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,12 @@
 		3FBF010D18F05B0F002E33A1 /* S31KitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "S31KitTests-Info.plist"; sourceTree = "<group>"; };
 		3FBF010F18F05B0F002E33A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3FBF011118F05B0F002E33A1 /* S31KitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = S31KitTests.m; sourceTree = "<group>"; };
+		3FBF011C18F05B44002E33A1 /* S31NetworkAvailability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = S31NetworkAvailability.h; path = Networking/S31NetworkAvailability.h; sourceTree = "<group>"; };
+		3FBF011D18F05B44002E33A1 /* S31NetworkAvailability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = S31NetworkAvailability.m; path = Networking/S31NetworkAvailability.m; sourceTree = "<group>"; };
+		3FBF012018F05BC2002E33A1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3FBF012B18F05E63002E33A1 /* S31.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S31.h; sourceTree = "<group>"; };
+		3FBF012C18F05FA9002E33A1 /* UIView+Parallax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Parallax.h"; path = "S31Kit/UIKit/UIView+Parallax.h"; sourceTree = "<group>"; };
+		3FBF012D18F05FA9002E33A1 /* UIView+Parallax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Parallax.m"; path = "S31Kit/UIKit/UIView+Parallax.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,7 @@
 				3FBF010B18F05B0F002E33A1 /* S31KitTests */,
 				3FBF00EB18F05B0F002E33A1 /* Frameworks */,
 				3FBF00EA18F05B0F002E33A1 /* Products */,
+				3FBF012018F05BC2002E33A1 /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,8 +117,10 @@
 		3FBF00F218F05B0F002E33A1 /* S31Kit */ = {
 			isa = PBXGroup;
 			children = (
-				3FBF00FB18F05B0F002E33A1 /* S31AppDelegate.h */,
-				3FBF00FC18F05B0F002E33A1 /* S31AppDelegate.m */,
+				3FBF012B18F05E63002E33A1 /* S31.h */,
+				3FBF012818F05C2C002E33A1 /* UIKit */,
+				3FBF011F18F05B48002E33A1 /* Network */,
+				3FBF011B18F05B1C002E33A1 /* App Delegate */,
 				3FBF00FE18F05B0F002E33A1 /* Images.xcassets */,
 				3FBF00F318F05B0F002E33A1 /* Supporting Files */,
 			);
@@ -142,6 +154,34 @@
 				3FBF010E18F05B0F002E33A1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FBF011B18F05B1C002E33A1 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				3FBF00FB18F05B0F002E33A1 /* S31AppDelegate.h */,
+				3FBF00FC18F05B0F002E33A1 /* S31AppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		3FBF011F18F05B48002E33A1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3FBF011C18F05B44002E33A1 /* S31NetworkAvailability.h */,
+				3FBF011D18F05B44002E33A1 /* S31NetworkAvailability.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		3FBF012818F05C2C002E33A1 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				3FBF012C18F05FA9002E33A1 /* UIView+Parallax.h */,
+				3FBF012D18F05FA9002E33A1 /* UIView+Parallax.m */,
+			);
+			name = UIKit;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FBF00F718F05B0F002E33A1 /* InfoPlist.strings in Resources */,
+				3FBF012118F05BC2002E33A1 /* .gitignore in Resources */,
 				3FBF00FF18F05B0F002E33A1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FBF011E18F05B44002E33A1 /* S31NetworkAvailability.m in Sources */,
+				3FBF012E18F05FA9002E33A1 /* UIView+Parallax.m in Sources */,
 				3FBF00FD18F05B0F002E33A1 /* S31AppDelegate.m in Sources */,
 				3FBF00F918F05B0F002E33A1 /* main.m in Sources */,
 			);
@@ -438,6 +481,7 @@
 				3FBF011718F05B0F002E33A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3FBF011818F05B0F002E33A1 /* Build configuration list for PBXNativeTarget "S31KitTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +490,7 @@
 				3FBF011A18F05B0F002E33A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
