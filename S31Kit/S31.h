@@ -8,6 +8,7 @@
 
 #import "S31NetworkAvailability.h"
 #import "UIView+Parallax.h"
+#import "UIImage+Comparison.h"
 
 
 #ifndef S31Kit_S31_h

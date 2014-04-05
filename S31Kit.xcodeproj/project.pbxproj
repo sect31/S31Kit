@@ -22,6 +22,7 @@
 		3FBF011E18F05B44002E33A1 /* S31NetworkAvailability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF011D18F05B44002E33A1 /* S31NetworkAvailability.m */; };
 		3FBF012118F05BC2002E33A1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3FBF012018F05BC2002E33A1 /* .gitignore */; };
 		3FBF012E18F05FA9002E33A1 /* UIView+Parallax.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF012D18F05FA9002E33A1 /* UIView+Parallax.m */; };
+		3FBF013118F060E1002E33A1 /* UIImage+Comparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBF013018F060E1002E33A1 /* UIImage+Comparison.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		3FBF012B18F05E63002E33A1 /* S31.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = S31.h; sourceTree = "<group>"; };
 		3FBF012C18F05FA9002E33A1 /* UIView+Parallax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Parallax.h"; path = "S31Kit/UIKit/UIView+Parallax.h"; sourceTree = "<group>"; };
 		3FBF012D18F05FA9002E33A1 /* UIView+Parallax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Parallax.m"; path = "S31Kit/UIKit/UIView+Parallax.m"; sourceTree = "<group>"; };
+		3FBF012F18F060E1002E33A1 /* UIImage+Comparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Comparison.h"; path = "S31Kit/UIKit/UIImage+Comparison.h"; sourceTree = "<group>"; };
+		3FBF013018F060E1002E33A1 /* UIImage+Comparison.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Comparison.m"; path = "S31Kit/UIKit/UIImage+Comparison.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 			children = (
 				3FBF012C18F05FA9002E33A1 /* UIView+Parallax.h */,
 				3FBF012D18F05FA9002E33A1 /* UIView+Parallax.m */,
+				3FBF012F18F060E1002E33A1 /* UIImage+Comparison.h */,
+				3FBF013018F060E1002E33A1 /* UIImage+Comparison.m */,
 			);
 			name = UIKit;
 			path = ..;
@@ -282,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FBF011E18F05B44002E33A1 /* S31NetworkAvailability.m in Sources */,
+				3FBF013118F060E1002E33A1 /* UIImage+Comparison.m in Sources */,
 				3FBF012E18F05FA9002E33A1 /* UIView+Parallax.m in Sources */,
 				3FBF00FD18F05B0F002E33A1 /* S31AppDelegate.m in Sources */,
 				3FBF00F918F05B0F002E33A1 /* main.m in Sources */,
