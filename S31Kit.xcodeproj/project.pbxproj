@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F6C28DC1908123F005F2016 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C28DB1908123F005F2016 /* Reachability.m */; };
 		3FBF00ED18F05B0F002E33A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FBF00EC18F05B0F002E33A1 /* Foundation.framework */; };
 		3FBF00EF18F05B0F002E33A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FBF00EE18F05B0F002E33A1 /* CoreGraphics.framework */; };
 		3FBF00F118F05B0F002E33A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FBF00F018F05B0F002E33A1 /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F6C28DA1908123F005F2016 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Networking/Reachability.h; sourceTree = "<group>"; };
+		3F6C28DB1908123F005F2016 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Networking/Reachability.m; sourceTree = "<group>"; };
 		3FBF00E918F05B0F002E33A1 /* S31Kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = S31Kit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBF00EC18F05B0F002E33A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3FBF00EE18F05B0F002E33A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -173,6 +176,8 @@
 			children = (
 				3FBF011C18F05B44002E33A1 /* S31NetworkAvailability.h */,
 				3FBF011D18F05B44002E33A1 /* S31NetworkAvailability.m */,
+				3F6C28DA1908123F005F2016 /* Reachability.h */,
+				3F6C28DB1908123F005F2016 /* Reachability.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -237,6 +242,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Section 31 Pte. Ltd.";
 				TargetAttributes = {
+					3FBF00E818F05B0F002E33A1 = {
+						DevelopmentTeam = CCFNPH2S7P;
+					};
 					3FBF010318F05B0F002E33A1 = {
 						TestTargetID = 3FBF00E818F05B0F002E33A1;
 					};
@@ -289,6 +297,7 @@
 				3FBF011E18F05B44002E33A1 /* S31NetworkAvailability.m in Sources */,
 				3FBF013118F060E1002E33A1 /* UIImage+Comparison.m in Sources */,
 				3FBF012E18F05FA9002E33A1 /* UIView+Parallax.m in Sources */,
+				3F6C28DC1908123F005F2016 /* Reachability.m in Sources */,
 				3FBF00FD18F05B0F002E33A1 /* S31AppDelegate.m in Sources */,
 				3FBF00F918F05B0F002E33A1 /* main.m in Sources */,
 			);
@@ -407,10 +416,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "S31Kit/S31Kit-Prefix.pch";
 				INFOPLIST_FILE = "S31Kit/S31Kit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -420,10 +432,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "S31Kit/S31Kit-Prefix.pch";
 				INFOPLIST_FILE = "S31Kit/S31Kit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

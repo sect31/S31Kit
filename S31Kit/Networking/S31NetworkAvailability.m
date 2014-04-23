@@ -8,7 +8,10 @@
 
 #import "S31NetworkAvailability.h"
 @import SystemConfiguration;
+@import CoreTelephony;
+#import "Reachability.h"
 #include <netinet/in.h>
+
 
 @implementation S31NetworkAvailability
 
@@ -36,7 +39,49 @@
     BOOL isReachable = flags & kSCNetworkFlagsReachable;
     BOOL needsConnection = flags & kSCNetworkFlagsConnectionRequired;
     return (isReachable && !needsConnection) ? YES : NO;
-
 }
+
++ (NSString *)currentNetworkTypeFromReachability
+{
+    NSString *result = nil;
+    Reachability *reachable = [Reachability reachabilityForInternetConnection];
+    
+    NetworkStatus netStatus = [reachable currentReachabilityStatus];
+    BOOL connectionRequired = [reachable connectionRequired];
+    
+    switch (netStatus) {
+        case NotReachable:        {
+            result = @"Not Reachable";
+            return  result;
+             //Minor interface detail- connectionRequired may return YES even when the host is unreachable. We cover that up here...
+            connectionRequired = NO;
+            break;
+        }
+            
+        case ReachableViaWiFi:        {
+            result = @"ReachableViaWiFi";
+            return  result;
+            break;
+        }
+            
+        case ReachableViaWWAN:        {
+            result = @"ReachableViaWWAN";
+            return  result;
+            NSLog(@"Current Cell Type: %@", [self currentCellNetworkType]);
+            break;
+        }
+
+    }
+    return 0;
+}
+
++ (NSString *)currentCellNetworkType
+{
+    CTTelephonyNetworkInfo *telephonyInfo = [CTTelephonyNetworkInfo new];
+    return telephonyInfo.currentRadioAccessTechnology;
+}
+
+
+
 
 @end

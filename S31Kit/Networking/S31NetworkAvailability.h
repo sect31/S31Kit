@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface S31NetworkAvailability : NSObject
 
-+(BOOL)connectedToNetwork;
++ (BOOL)connectedToNetwork;
+
++ (NSString *)currentCellNetworkType; // Uses CoreTelephony
++ (NSString *)currentNetworkTypeFromReachability;
 
 @end
