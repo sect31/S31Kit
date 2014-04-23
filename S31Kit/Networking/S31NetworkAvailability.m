@@ -80,26 +80,26 @@ typedef enum : NSInteger {
     return 0;
 }
 
-+ (NSString *)currentCellNetworkType
+- (NSString *)currentCellNetworkType
 {
     NSString *result = nil;
     
-    if ([self currentCellTechnology] == 0) {
+    if ([self currentCellTechnology] == GPRS_EDGE) {
         result = @"GPRS";
     }
     
-    if ([self currentCellTechnology] == 1) {
+    if ([self currentCellTechnology] == THREE_G) {
         result = @"3G";
     }
     
-    if ([self currentCellTechnology] == 2) {
+    if ([self currentCellTechnology] == FOUR_G) {
         result = @"4G";
     }
     
     return result;
 }
 
-+ (CellTechType)currentCellTechnology
+- (CellTechType)currentCellTechnology
 {
     CTTelephonyNetworkInfo *telephonyInfo = [CTTelephonyNetworkInfo new];
     
