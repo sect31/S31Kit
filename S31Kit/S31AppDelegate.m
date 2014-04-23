@@ -18,6 +18,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    NSLog(@"%@", [S31NetworkAvailability currentNetworkTypeFromReachability]);
+    
     return YES;
 }
 

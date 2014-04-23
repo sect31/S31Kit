@@ -12,6 +12,11 @@
 #import "Reachability.h"
 #include <netinet/in.h>
 
+typedef enum : NSInteger {
+	GPRS_EDGE = 0,
+	THREE_G,
+	FOUR_G
+} CellTechType;
 
 @implementation S31NetworkAvailability
 
@@ -65,9 +70,9 @@
         }
             
         case ReachableViaWWAN:        {
+            NSLog(@"Current Cell Type: %@", [self currentCellNetworkType]); // Type of WWAN connection
             result = @"ReachableViaWWAN";
             return  result;
-            NSLog(@"Current Cell Type: %@", [self currentCellNetworkType]);
             break;
         }
 
@@ -77,11 +82,49 @@
 
 + (NSString *)currentCellNetworkType
 {
-    CTTelephonyNetworkInfo *telephonyInfo = [CTTelephonyNetworkInfo new];
-    return telephonyInfo.currentRadioAccessTechnology;
+    NSString *result = nil;
+    
+    if ([self currentCellTechnology] == 0) {
+        result = @"GPRS";
+    }
+    
+    if ([self currentCellTechnology] == 1) {
+        result = @"3G";
+    }
+    
+    if ([self currentCellTechnology] == 2) {
+        result = @"4G";
+    }
+    
+    return result;
 }
 
-
++ (CellTechType)currentCellTechnology
+{
+    CTTelephonyNetworkInfo *telephonyInfo = [CTTelephonyNetworkInfo new];
+    
+    if ([telephonyInfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyGPRS] ||
+        [telephonyInfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyEdge] ||
+        [telephonyInfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMA1x]) {
+        return GPRS_EDGE;
+    }
+    
+    if ([telephonyInfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyHSDPA] ||
+        [telephonyInfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyHSUPA] ||
+        [telephonyInfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyWCDMA] ||
+        [telephonyInfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMAEVDORev0] ||
+        [telephonyInfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMAEVDORevA] ||
+        [telephonyInfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyCDMAEVDORevB]) {
+        return THREE_G;
+    }
+    
+    if ([telephonyInfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyLTE] ||
+        [telephonyInfo.currentRadioAccessTechnology isEqualToString:CTRadioAccessTechnologyeHRPD]) {
+        return FOUR_G;
+    }
+    
+    return 0;
+}
 
 
 @end
